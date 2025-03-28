@@ -28,6 +28,7 @@ location and the nearest community center.
 - `error`: Error message if any occurred
 
 ## Environment Variables
+need my Google Maps API key to run this service, lmk if yall need to run it - Rainer
 
 ## Building and Running
 build and run docker compose

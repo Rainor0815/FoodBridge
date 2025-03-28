@@ -7,7 +7,7 @@ A route optimiser service that plans the most time efficient route to pickup foo
 This service uses the Directions API in Google Maps API to come up with an optimal, step-by-step route for the food bank's pickup driver's reference.
 
 ## API
-
+Google Maps API; specifically Directions API
 
 ### getFilteredUsers
 

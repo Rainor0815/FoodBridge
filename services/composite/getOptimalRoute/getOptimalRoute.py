@@ -13,7 +13,7 @@ redis_client = redis.Redis(host='localhost', port=6379, db=0, decode_responses=T
 
 # Hub and Route microservices URLs
 HUB_SERVICE_URL = "http://localhost:5010/internal/hub/foodbank/123"
-ROUTE_SERVICE_URL = "http://localhost:5002/routing"
+ROUTE_SERVICE_URL = "http://localhost:5011/route/routing"
 
 @app.route('/plan-route', methods=['GET'])
 def plan_route():

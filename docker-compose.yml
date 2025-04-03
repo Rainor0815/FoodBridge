@@ -91,6 +91,34 @@ services:
       - hub
       - rabbitmq
 
+  route:
+    build:
+      context: ./services/atomic/route
+      dockerfile: Dockerfile
+    container_name: route
+    ports:
+      - 5011:5000
+    env_file:
+      - .env
+    networks:
+      - esd-net
+
+  get-optimal-route:
+    build:
+      context: ./services/composite/getOptimalRoute
+      dockerfile: Dockerfile
+    container_name: get-optimal-route
+    ports:
+      - 5016:5000
+    environment:
+      - HUB_SERVICE_URL=http://hub:5000
+      - ROUTE_SERVICE_URL=http://route:5000
+    networks:
+      - esd-net
+    depends_on:
+      - hub
+      - route
+
     # # PostgreSQL Service
   # postgres:
   #   image: postgres:13

@@ -12,7 +12,7 @@ load_dotenv()
 ROUTE_GOOGLE_MAPS_API_KEY = os.environ.get('ROUTE_GOOGLE_MAPS_API_KEY')
 gmaps = googlemaps.Client(key=ROUTE_GOOGLE_MAPS_API_KEY)
 
-@app.route('/route', methods=['POST'])
+@app.route('/routing', methods=['POST'])
 def route():
     data = request.json
     
@@ -56,4 +56,4 @@ def route():
         return jsonify({"error": str(e)}), 500
     
 if __name__ == "__main__":
-    app.run()
+    app.run(port=5000)
